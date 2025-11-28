@@ -6,8 +6,6 @@
 
 A comprehensive system for generating high-quality face images from text descriptions using Stable Diffusion 2.1 fine-tuned with LoRA (Low-Rank Adaptation). This project includes complete pipelines for dataset preparation, model training, and inference.
 
-![Example Results](examples.png)
-
 ## Table of Contents
 
 - [Overview](#overview)
@@ -200,7 +198,7 @@ dataset_root/
 
 ### Distributed Processing
 
-For large datasets, processing can be distributed across team members:
+For large datasets, processing was distributed across team members:
 
 **Example for 5 team members processing FFHQ (70k images):**
 ```bash
