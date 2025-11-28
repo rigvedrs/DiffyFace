@@ -1,0 +1,80 @@
+from groq import Groq
+import base64
+import os
+
+def encode_image(image_path):
+    """Encode image to base64 string"""
+    with open(image_path, "rb") as image_file:
+        return base64.b64encode(image_file.read()).decode('utf-8')
+
+def analyze_image(image_path, api_key=None):
+    """
+    Analyze an image using Groq's Llama 4 Scout model
+    
+    Args:
+        image_path: Path to the image file
+        api_key: Groq API key (if not set in environment)
+    """
+    # Initialize Groq client
+    if api_key:
+        client = Groq(api_key=api_key)
+    else:
+        client = Groq(api_key=os.environ.get("GROQ_API_KEY"))
+    
+    # Encode the image
+    print(f"Encoding image: {image_path}")
+    base64_image = encode_image(image_path)
+    
+    # Detailed analysis prompt
+    prompt = """Provide a detailed physical description of the person in this image. Include the following attributes: approximate age, gender, ethnicity/race, facial expression and emotion, hair characteristics (color, length, style, hairline), facial features (eyes, nose, mouth, lips, chin, cheekbones), facial hair if present, accessories (eyeglasses, hats, jewelry), body type indicators (chubby, bags under eyes), skin tone, makeup if visible, and any other distinctive physical characteristics. Describe whether the mouth is open or closed, and the state of the eyes. Write the description as a single flowing paragraph."""
+    
+    # Make API request
+    print("Analyzing image with Groq API...")
+    chat_completion = client.chat.completions.create(
+        messages=[
+            {
+                "role": "user",
+                "content": [
+                    {"type": "text", "text": prompt},
+                    {
+                        "type": "image_url",
+                        "image_url": {
+                            "url": f"data:image/jpeg;base64,{base64_image}",
+                        },
+                    },
+                ],
+            }
+        ],
+        model="meta-llama/llama-4-scout-17b-16e-instruct",
+        temperature=1,
+        max_completion_tokens=1024,
+        top_p=1,
+        stream=False,
+        stop=None,
+    )
+    
+    # Return the analysis
+    return chat_completion.choices[0].message.content
+
+if __name__ == "__main__":
+    # Path to your image
+    image_path = "test.png"
+    
+    # Check if image exists
+    if not os.path.exists(image_path):
+        print(f"Error: Image file '{image_path}' not found!")
+        exit(1)
+    
+    # Analyze the image
+    try:
+        result = analyze_image(image_path)
+        print("\n" + "="*80)
+        print("ANALYSIS RESULT:")
+        print("="*80)
+        print(result)
+        print("="*80)
+    except Exception as e:
+        print(f"Error: {e}")
+        print("\nMake sure you have:")
+        print("1. Installed groq: pip install groq")
+        print("2. Set GROQ_API_KEY environment variable or pass it to the function")
