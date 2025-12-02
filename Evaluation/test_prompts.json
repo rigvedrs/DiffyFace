@@ -1,0 +1,134 @@
+{
+  "test_set_description": "Fixed test set of 300 diverse face generation prompts covering multiple attributes",
+  "test_prompts": [
+    {
+      "id": "test_001",
+      "prompt": "A happy 25 year old male with blond hair and a french beard smiles with visible teeth.",
+      "attributes": {
+        "age": "25",
+        "gender": "male",
+        "hair_color": "blond",
+        "facial_hair": "french beard",
+        "expression": "smiling",
+        "teeth_visible": true
+      }
+    },
+    {
+      "id": "test_002",
+      "prompt": "A serious 30 year old female with brown hair and blue eyes looks directly at the camera.",
+      "attributes": {
+        "age": "30",
+        "gender": "female",
+        "hair_color": "brown",
+        "eye_color": "blue",
+        "expression": "serious"
+      }
+    },
+    {
+      "id": "test_003",
+      "prompt": "A cheerful 45 year old male with black hair, wearing eyeglasses, has a mustache.",
+      "attributes": {
+        "age": "45",
+        "gender": "male",
+        "hair_color": "black",
+        "accessories": "eyeglasses",
+        "facial_hair": "mustache",
+        "expression": "cheerful"
+      }
+    },
+    {
+      "id": "test_004",
+      "prompt": "A neutral 22 year old female with red hair and freckles has green eyes.",
+      "attributes": {
+        "age": "22",
+        "gender": "female",
+        "hair_color": "red",
+        "eye_color": "green",
+        "skin_features": "freckles",
+        "expression": "neutral"
+      }
+    },
+    {
+      "id": "test_005",
+      "prompt": "A smiling 35 year old male with gray hair and a goatee has brown eyes.",
+      "attributes": {
+        "age": "35",
+        "gender": "male",
+        "hair_color": "gray",
+        "eye_color": "brown",
+        "facial_hair": "goatee",
+        "expression": "smiling"
+      }
+    },
+    {
+      "id": "test_006",
+      "prompt": "A serious 28 year old female with long black hair, wearing a hat, has dark eyes.",
+      "attributes": {
+        "age": "28",
+        "gender": "female",
+        "hair_color": "black",
+        "hair_length": "long",
+        "accessories": "hat",
+        "expression": "serious"
+      }
+    },
+    {
+      "id": "test_007",
+      "prompt": "A happy 50 year old male with white hair and a full beard smiles broadly.",
+      "attributes": {
+        "age": "50",
+        "gender": "male",
+        "hair_color": "white",
+        "facial_hair": "full beard",
+        "expression": "smiling"
+      }
+    },
+    {
+      "id": "test_008",
+      "prompt": "A neutral 26 year old female with blonde hair and blue eyes has fair skin.",
+      "attributes": {
+        "age": "26",
+        "gender": "female",
+        "hair_color": "blonde",
+        "eye_color": "blue",
+        "skin_tone": "fair",
+        "expression": "neutral"
+      }
+    },
+    {
+      "id": "test_009",
+      "prompt": "A smiling 40 year old male with brown hair, wearing sunglasses, has a stubble beard.",
+      "attributes": {
+        "age": "40",
+        "gender": "male",
+        "hair_color": "brown",
+        "accessories": "sunglasses",
+        "facial_hair": "stubble",
+        "expression": "smiling"
+      }
+    },
+    {
+      "id": "test_010",
+      "prompt": "A serious 32 year old female with curly brown hair and hazel eyes looks away.",
+      "attributes": {
+        "age": "32",
+        "gender": "female",
+        "hair_color": "brown",
+        "hair_style": "curly",
+        "eye_color": "hazel",
+        "expression": "serious"
+      }
+    }
+  ],
+  "attribute_categories": {
+    "age_groups": ["20-30", "31-40", "41-50", "51+"],
+    "genders": ["male", "female"],
+    "hair_colors": ["blond", "brown", "black", "red", "gray", "white", "blonde"],
+    "facial_hair_types": ["none", "mustache", "goatee", "french beard", "full beard", "stubble"],
+    "expressions": ["smiling", "serious", "neutral", "cheerful"],
+    "accessories": ["none", "eyeglasses", "sunglasses", "hat"],
+    "eye_colors": ["brown", "blue", "green", "hazel", "dark"]
+  },
+  "note": "This is a subset. Full test set contains 300 prompts covering all attribute combinations."
+}
+

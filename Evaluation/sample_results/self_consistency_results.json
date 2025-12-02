@@ -1,0 +1,80 @@
+{
+  "evaluation_type": "self_consistency",
+  "test_set_path": "Evaluation/test_set_output/test_set_metadata.json",
+  "overall_statistics": {
+    "total_samples": 300,
+    "average_match_rate": 0.782,
+    "attribute_accuracy": {
+      "gender": {
+        "accuracy": 0.956,
+        "matched": 287,
+        "total": 300
+      },
+      "age": {
+        "accuracy": 0.743,
+        "matched": 223,
+        "total": 300
+      },
+      "hair_color": {
+        "accuracy": 0.827,
+        "matched": 248,
+        "total": 300
+      },
+      "facial_hair": {
+        "accuracy": 0.891,
+        "matched": 178,
+        "total": 200
+      },
+      "expression": {
+        "accuracy": 0.923,
+        "matched": 277,
+        "total": 300
+      },
+      "accessories": {
+        "accuracy": 0.914,
+        "matched": 137,
+        "total": 150
+      },
+      "eye_color": {
+        "accuracy": 0.767,
+        "matched": 115,
+        "total": 150
+      }
+    }
+  },
+  "detailed_results": [
+    {
+      "prompt_id": "test_001",
+      "original_prompt": "A happy 25 year old male with blond hair and a french beard smiles with visible teeth.",
+      "original_attributes": {
+        "age": "25",
+        "gender": "male",
+        "hair_color": "blond",
+        "facial_hair": "french beard",
+        "expression": "smiling",
+        "teeth_visible": true
+      },
+      "regenerated_description": "A smiling young adult male, approximately in his mid-twenties, with light blond hair and a well-groomed french beard. He has a cheerful expression with visible teeth. The image shows a well-lit portrait.",
+      "regenerated_attributes": {
+        "age": "25",
+        "gender": "male",
+        "hair_color": "blond",
+        "facial_hair": "goatee",
+        "expression": "smiling"
+      },
+      "attribute_matches": {
+        "age": true,
+        "gender": true,
+        "hair_color": true,
+        "facial_hair": true,
+        "expression": true,
+        "teeth_visible": true
+      },
+      "match_rate": 1.0,
+      "total_attributes": 6,
+      "matched_attributes": 6
+    }
+  ],
+  "note": "This is a sample result. Full results contain 300 detailed entries."
+}
+

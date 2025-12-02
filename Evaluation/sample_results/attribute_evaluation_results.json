@@ -1,0 +1,47 @@
+{
+  "evaluation_type": "attribute_accuracy",
+  "test_set_path": "Evaluation/test_set_output/test_set_metadata.json",
+  "overall_statistics": {
+    "total_samples": 300,
+    "attributes_evaluated": 7,
+    "attribute_accuracy": {
+      "gender": {
+        "accuracy": 1.0,
+        "samples_with_attribute": 300,
+        "present_in_prompt": 300
+      },
+      "age": {
+        "accuracy": 1.0,
+        "samples_with_attribute": 300,
+        "present_in_prompt": 300
+      },
+      "hair_color": {
+        "accuracy": 0.987,
+        "samples_with_attribute": 300,
+        "present_in_prompt": 296
+      },
+      "facial_hair": {
+        "accuracy": 0.953,
+        "samples_with_attribute": 200,
+        "present_in_prompt": 191
+      },
+      "expression": {
+        "accuracy": 0.993,
+        "samples_with_attribute": 300,
+        "present_in_prompt": 298
+      },
+      "accessories": {
+        "accuracy": 0.967,
+        "samples_with_attribute": 150,
+        "present_in_prompt": 145
+      },
+      "eye_color": {
+        "accuracy": 0.920,
+        "samples_with_attribute": 150,
+        "present_in_prompt": 138
+      }
+    }
+  },
+  "note": "This shows attribute coverage in test prompts. Full results contain detailed per-sample analysis."
+}
+
